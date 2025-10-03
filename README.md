@@ -48,6 +48,7 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 
+<<<<<<< HEAD
 
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
 - `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
@@ -107,3 +108,7 @@ sp.pprint(H_sym)
 
 ## License
 MIT
+=======
+## Conclusión
+El proyecto permitió implementar con éxito la **cinemática directa simbólica** de tres configuraciones de robots manipuladores (RR, RRR y SCARA) mediante Python. La utilización de los parámetros Denavit-Hartenberg y las librerías **Sympy** y **Numpy** facilitó el cálculo y verificación de las matrices de transformación homogénea.
+>>>>>>> 3d26b09b3abe32dbe8c8690a78396a88603ba411
