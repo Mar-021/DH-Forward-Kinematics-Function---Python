@@ -47,6 +47,7 @@ Cada archivo de robot sigue la misma estructura
 **Definición de la tabla DH:**
 
 -Ejemplo (RR):
+
 ![DH](ACTI/A.png)
 
 **Cálculo simbólico** de la matriz de transformación homogénea mediante:
