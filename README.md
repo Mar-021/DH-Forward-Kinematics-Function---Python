@@ -1,5 +1,5 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
-# DH Forward Kinematics Python
+# PROYECTO CINEMÁTICA DIRECTA EN REPOSITORIO DE GIT
 
 This project provides tools to compute the forward kinematics of serial robotic manipulators using Denavit-Hartenberg (DH) parameters. It supports both numerical and symbolic calculations, making it useful for both simulation and analytical studies.
 
