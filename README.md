@@ -38,7 +38,7 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 ### Implementación de la cinemática directa
-![Esquema](ACTI/A.png)
+![DH](ACTI/A.png)
 
 
 
@@ -46,7 +46,8 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 
-
+## Conclusión
+El proyecto permitió implementar con éxito la cinemática directa simbólica de tres configuraciones de robots manipuladores (RR, RRR y SCARA) mediante Python. La utilización de los parámetros Denavit-Hartenberg y las librerías Sympy y Numpy facilitó el cálculo y verificación de las matrices de transformación homogénea.
 
 
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
