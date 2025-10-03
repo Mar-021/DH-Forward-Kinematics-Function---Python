@@ -52,9 +52,9 @@ Cada archivo de robot sigue la misma estructura
 
 **Cálculo simbólico** de la matriz de transformación homogénea mediante:
 
--`ForwardKinematicsDH.symbolic(dh_params)`
+-`ForwardKinematicsDH.symbolic(dh_params)`::
 
-•	El resultado se imprime en consola con `sp.pprint()`
+•	El resultado se imprime en consola con -`sp.pprint()`
 
 **-Ejemplo numérico** para validar los cálculos:
 
