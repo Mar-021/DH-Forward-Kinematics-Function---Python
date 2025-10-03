@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
 # PROYECTO CINEMÁTICA DIRECTA EN REPOSITORIO DE GIT
-## Introdicción
+## Introducción
 La cinemática directa es esencial en robótica porque permite calcular la posición y orientación del efector final a partir de las variables articulares. En este proyecto se implementa la cinemática directa simbólica de tres configuraciones de robots: un planar RR (2 GDL), un antropomórfico RRR (3 GDL) y un SCARA (RRP), utilizando la metodología de Denavit-Hartenberg (DH).
 
 El desarrollo se realizó en Python, empleando las librerías NumPy y Sympy para el manejo de cálculos numéricos y simbólicos. Se generaron matrices de transformación homogénea que describen el movimiento del robot, siguiendo los parámetros DH del libro Control de robots manipuladores de Fernando Reyes Cortés.
