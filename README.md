@@ -9,7 +9,7 @@ El desarrollo se realizó en Python, empleando las librerías NumPy y Sympy para
 ## Metodología
 La metodología para este proyecto se dividió en dos niveles: la implementación de funciones base para la cinemática directa y la aplicación de estas funciones a tres configuraciones de robots manipuladores (RR, RRR y RRP/SCARA).
 
-### Preparación del entorno y librerías
+### 1.Preparación del entorno y librerías
 •	El proyecto se desarrolló en Python, utilizando las librerías:
 
    -NumPy: para cálculos numéricos.
@@ -23,7 +23,7 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 - `forward_kinematics_dh_class.py`: integra ambas funcionalidades en una clase reutilizable.
 
 
-### Definición de parámetros Denavit-Hartenberg (DH)
+### 2.Definición de parámetros Denavit-Hartenberg (DH)
 • Para cada robot se elaboró la tabla DH en el formato estándar [θ_i,d_i,a_i,α_i].
 
 •Los parámetros fueron obtenidos del libro Control de robots manipuladores de Fernando Reyes Cortés (págs. 226–237).
@@ -37,21 +37,34 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 	RRP.py → robot SCARA con configuración RRP.
 
 
-### Implementación de la cinemática directa
-Cada archivo de robot sigue la misma estructura:
--Definición de variables simbólicas:
-o	Ejemplo (RR): q1, q2, l1, l2 = sp.symbols('q1 q2 l1 l2').
-        -Definición de la tabla DH:
-o	Ejemplo (RR): IMAGEN A
--Cálculo simbólico de la matriz de transformación homogénea mediante:
+### 3.Implementación de la cinemática directa
+Cada archivo de robot sigue la misma estructura
+
+**Definición de variables simbólicas:**
+
+-Ejemplo (RR): q1, q2, l1, l2 = sp.symbols('q1 q2 l1 l2').
+
+**Definición de la tabla DH:**
+
+-Ejemplo (RR):
+![DH](ACTI/A.png)
+
+**Cálculo simbólico** de la matriz de transformación homogénea mediante:
+
 •	ForwardKinematicsDH.symbolic(dh_params).
+
 •	El resultado se imprime en consola con sp.pprint().
--Ejemplo numérico para validar los cálculos:
+
+**-Ejemplo numérico** para validar los cálculos:
+
 •	Se sustituyen valores de ángulos y longitudes (ejemplo: q1=45°, q2=-45°, l1=l2=1 en el RR).
+
 •	Se obtiene la matriz numérica con ForwardKinematicsDH.numeric(dh_params).
 
+### 4.Robots analizados
 
-![DH](ACTI/A.png)
+
+
 
 
 
