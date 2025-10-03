@@ -67,16 +67,58 @@ Cada archivo de robot sigue la misma estructura
 
 ![RR](ACTI/RR.png)
 
-Archivo: `RR.py`
-	Definición de símbolos: q_1,q_2,l_1,l_2.
-	Tabla DH:   IMAGEN C
-	•  Cálculo simbólico: se genera la matriz homogénea H_0^2con ForwardKinematicsDH.symbolic().
-	•  Ejemplo numérico: q_1=45^∘,q_2=-45^∘,l_1=l_2=1.
-	•  Resultado esperado: la posición final corresponde al efector en un plano con dos rotaciones consecutivas.
+**Archivo:** `RR.py`
+
+**Definición de símbolos:** q_1,q_2,l_1,l_2
+
+**Tabla DH:**
+
+![TRR](ACTI/TRR.png)
+
+**Cálculo simbólico:** se genera la matriz homogénea H_0^2con `ForwardKinematicsDH.symbolic()`
+
+**Ejemplo numérico:** q_1=45^∘,q_2=-45^∘,l_1=l_2=1
+
+**Resultado esperado:** la posición final corresponde al efector en un plano con dos rotaciones consecutivas.
+
+
+**b)Robot Antropomórfico RRR (3 GDL)**
+
+![RR](ACTI/RRR.png)
+
+**Archivo:** `RRR.py`
+
+**Definición de símbolos:** q_1,q_2,q_3,l_1,l_2,l_3
+
+**Tabla DH:**
+
+![TRRR](ACTI/TRRR.png)
+
+**Cálculo simbólico:** se obtiene la matriz H_0^3que describe la orientación tridimensional del efector.
+
+**Ejemplo numérico:** q_1=30^∘,q_2=45^∘,q_3=0^∘,l_1=l_2=1,l_3=0.5
+
+**Resultado esperado:** la matriz homogénea incluye rotaciones en 3D, representando un brazo articulado antropomórfico.
 
 
 
+**c)Robot SCARA (RRP)**
 
+![RRP](ACTI/RRP.png)
+
+**Archivo:** `RRP.py`
+
+**Definición de símbolos:** q_1,q_2,d_3,l_1,l_2
+
+**Tabla DH:**
+
+![TRRP](ACTI/TRRP.png)
+
+**Cálculo simbólico:** se genera la matriz H_0^3considerando dos rotaciones y un desplazamiento prismático.
+
+**Ejemplo numérico:** 	q_1=0^∘,q_2=90^∘,d_3=0.1,l_1=l_2=0.5
+
+**Resultado esperado:** el efector final se desplaza en el plano XY con movimientos rotacionales y en el eje Z mediante la articulación prismática.
 
 
 
