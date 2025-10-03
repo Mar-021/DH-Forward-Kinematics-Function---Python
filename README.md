@@ -20,10 +20,10 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 	 forward_kinematics_dh.py #implementa el cálculo numérico de matrices DH.
 	 forward_kinematics_dh_symbolic.py #implementa el cálculo simbólico de matrices DH.
-o	forward_kinematics_dh_class.py: integra ambas funcionalidades en una clase reutilizable.
+	 forward_kinematics_dh_class.py #integra ambas funcionalidades en una clase reutilizable.
 
 
-## File Structure
+### Definición de parámetros Denavit-Hartenberg (DH)
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
 - `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
 - `forward_kinematics_dh_class.py`: Unified class with both numeric and symbolic methods
