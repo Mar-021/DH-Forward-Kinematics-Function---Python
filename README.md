@@ -6,11 +6,18 @@ La cinemática directa es esencial en robótica porque permite calcular la posic
 El desarrollo se realizó en Python, empleando las librerías NumPy y Sympy para el manejo de cálculos numéricos y simbólicos. Se generaron matrices de transformación homogénea que describen el movimiento del robot, siguiendo los parámetros DH del libro Control de robots manipuladores de Fernando Reyes Cortés.
 
 
-## Features
-- Compute forward kinematics numerically using NumPy
-- Compute forward kinematics symbolically using SymPy
-- Unified class interface for both calculation types
-- Example scripts for quick testing
+## Metodología
+La metodología para este proyecto se dividió en dos niveles: la implementación de funciones base para la cinemática directa y la aplicación de estas funciones a tres configuraciones de robots manipuladores (RR, RRR y RRP/SCARA).
+
+### Preparación del entorno y librerías
+•	El proyecto se desarrolló en Python, utilizando las librerías:
+   -NumPy: para cálculos numéricos.
+   -Sympy: para cálculos simbólicos.
+•	Se organizaron los programas en módulos separados:
+	- forward_kinematics_dh.py: implementa el cálculo numérico de matrices DH.
+	- forward_kinematics_dh_symbolic.py: implementa el cálculo simbólico de matrices DH.
+o	forward_kinematics_dh_class.py: integra ambas funcionalidades en una clase reutilizable.
+
 
 ## File Structure
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
