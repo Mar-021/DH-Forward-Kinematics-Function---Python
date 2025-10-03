@@ -37,6 +37,9 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 	RRP.py → robot SCARA con configuración RRP.
 
 
+### Implementación de la cinemática directa
+
+
 
 
 
