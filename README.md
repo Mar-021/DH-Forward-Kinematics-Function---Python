@@ -1,15 +1,54 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
-# DH Forward Kinematics Python
+# PROYECTO CINEMÁTICA DIRECTA EN REPOSITORIO DE GIT
+## Introdicción
+La cinemática directa es esencial en robótica porque permite calcular la posición y orientación del efector final a partir de las variables articulares. En este proyecto se implementa la cinemática directa simbólica de tres configuraciones de robots: un planar RR (2 GDL), un antropomórfico RRR (3 GDL) y un SCARA (RRP), utilizando la metodología de Denavit-Hartenberg (DH).
 
-This project provides tools to compute the forward kinematics of serial robotic manipulators using Denavit-Hartenberg (DH) parameters. It supports both numerical and symbolic calculations, making it useful for both simulation and analytical studies.
+El desarrollo se realizó en Python, empleando las librerías NumPy y Sympy para el manejo de cálculos numéricos y simbólicos. Se generaron matrices de transformación homogénea que describen el movimiento del robot, siguiendo los parámetros DH del libro Control de robots manipuladores de Fernando Reyes Cortés.
 
-## Features
-- Compute forward kinematics numerically using NumPy
-- Compute forward kinematics symbolically using SymPy
-- Unified class interface for both calculation types
-- Example scripts for quick testing
 
-## File Structure
+## Metodología
+La metodología para este proyecto se dividió en dos niveles: la implementación de funciones base para la cinemática directa y la aplicación de estas funciones a tres configuraciones de robots manipuladores (RR, RRR y RRP/SCARA).
+
+### Preparación del entorno y librerías
+•	El proyecto se desarrolló en Python, utilizando las librerías:
+
+   -NumPy: para cálculos numéricos.
+   
+   -Sympy: para cálculos simbólicos.
+   
+•	Se organizaron los programas en módulos separados:
+
+- `forward_kinematics_dh.py`: implementa el cálculo numérico de matrices DH.
+- `forward_kinematics_dh_symbolic.py`: implementa el cálculo simbólico de matrices DH.
+- `forward_kinematics_dh_class.py`: integra ambas funcionalidades en una clase reutilizable.
+
+
+### Definición de parámetros Denavit-Hartenberg (DH)
+• Para cada robot se elaboró la tabla DH en el formato estándar [θ_i,d_i,a_i,α_i].
+
+•Los parámetros fueron obtenidos del libro Control de robots manipuladores de Fernando Reyes Cortés (págs. 226–237).
+
+•Estos parámetros fueron implementados en archivos independientes:
+
+	RR.py → robot planar de dos grados de libertad (RR).
+   
+	RRR.py → robot antropomórfico de tres grados de libertad (RRR).
+   
+	RRP.py → robot SCARA con configuración RRP.
+
+
+### Implementación de la cinemática directa
+![Esquema del Robot Planar](ACTIV/A.png)
+
+
+
+
+
+
+
+
+
+
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
 - `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
 - `forward_kinematics_dh_class.py`: Unified class with both numeric and symbolic methods
