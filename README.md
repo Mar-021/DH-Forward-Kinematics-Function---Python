@@ -11,9 +11,13 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 ### Preparación del entorno y librerías
 •	El proyecto se desarrolló en Python, utilizando las librerías:
+
    -NumPy: para cálculos numéricos.
+   
    -Sympy: para cálculos simbólicos.
+   
 •	Se organizaron los programas en módulos separados:
+
 	- forward_kinematics_dh.py: implementa el cálculo numérico de matrices DH.
 	- forward_kinematics_dh_symbolic.py: implementa el cálculo simbólico de matrices DH.
 o	forward_kinematics_dh_class.py: integra ambas funcionalidades en una clase reutilizable.
