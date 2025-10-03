@@ -9,7 +9,7 @@ El desarrollo se realizó en Python, empleando las librerías NumPy y Sympy para
 ## Metodología
 La metodología para este proyecto se dividió en dos niveles: la implementación de funciones base para la cinemática directa y la aplicación de estas funciones a tres configuraciones de robots manipuladores (RR, RRR y RRP/SCARA).
 
-### Preparación del entorno y librerías
+### 1.Preparación del entorno y librerías
 •	El proyecto se desarrolló en Python, utilizando las librerías:
 
    -NumPy: para cálculos numéricos.
@@ -23,7 +23,7 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 - `forward_kinematics_dh_class.py`: integra ambas funcionalidades en una clase reutilizable.
 
 
-### Definición de parámetros Denavit-Hartenberg (DH)
+### 2.Definición de parámetros Denavit-Hartenberg (DH)
 • Para cada robot se elaboró la tabla DH en el formato estándar [θ_i,d_i,a_i,α_i].
 
 •Los parámetros fueron obtenidos del libro Control de robots manipuladores de Fernando Reyes Cortés (págs. 226–237).
@@ -37,78 +37,105 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 	RRP.py → robot SCARA con configuración RRP.
 
 
-### Implementación de la cinemática directa
-![Esquema del Robot Planar](ACTIV/A.png)
+### 3.Implementación de la cinemática directa
+Cada archivo de robot sigue la misma estructura
+
+**Definición de variables simbólicas:**
+
+-Ejemplo (RR): q1, q2, l1, l2 = sp.symbols('q1 q2 l1 l2').
+
+**Definición de la tabla DH:**
+
+-Ejemplo (RR):
+
+![DH](ACTI/A.png)
+
+**Cálculo simbólico** de la matriz de transformación homogénea mediante:
+
+-`ForwardKinematicsDH.symbolic(dh_params)`
+
+•	El resultado se imprime en consola con -`sp.pprint()`
+
+**-Ejemplo numérico** para validar los cálculos:
+
+•	Se sustituyen valores de ángulos y longitudes (ejemplo: q1=45°, q2=-45°, l1=l2=1 en el RR).
+
+•	Se obtiene la matriz numérica con -`ForwardKinematicsDH.numeric(dh_params)`
+
+### 4.Robots analizados
+**a)Robbot Planar RR(2GDL)**
+
+![RR](ACTI/RR.png)
+
+**Archivo:** `RR.py`
+
+**Definición de símbolos:** q_1,q_2,l_1,l_2
+
+**Tabla DH:**
+
+![TRR](ACTI/TRR.png)
+
+**Cálculo simbólico:** se genera la matriz homogénea H_0^2con `ForwardKinematicsDH.symbolic()`
+
+**Ejemplo numérico:** q_1=45^∘,q_2=-45^∘,l_1=l_2=1
+
+**Resultado esperado:** la posición final corresponde al efector en un plano con dos rotaciones consecutivas.
+
+
+**b)Robot Antropomórfico RRR (3 GDL)**
+
+![RR](ACTI/RRR.png)
+
+**Archivo:** `RRR.py`
+
+**Definición de símbolos:** q_1,q_2,q_3,l_1,l_2,l_3
+
+**Tabla DH:**
+
+![TRRR](ACTI/TRRR.png)
+
+**Cálculo simbólico:** se obtiene la matriz H_0^3que describe la orientación tridimensional del efector.
+
+**Ejemplo numérico:** q_1=30^∘,q_2=45^∘,q_3=0^∘,l_1=l_2=1,l_3=0.5
+
+**Resultado esperado:** la matriz homogénea incluye rotaciones en 3D, representando un brazo articulado antropomórfico.
 
 
 
+**c)Robot SCARA (RRP)**
+
+![RRP](ACTI/RRP.png)
+
+**Archivo:** `RRP.py`
+
+**Definición de símbolos:** q_1,q_2,d_3,l_1,l_2
+
+**Tabla DH:**
+
+![TRRP](ACTI/TRRP.png)
+
+**Cálculo simbólico:** se genera la matriz H_0^3considerando dos rotaciones y un desplazamiento prismático.
+
+**Ejemplo numérico:** 	q_1=0^∘,q_2=90^∘,d_3=0.1,l_1=l_2=0.5
+
+**Resultado esperado:** el efector final se desplaza en el plano XY con movimientos rotacionales y en el eje Z mediante la articulación prismática.
 
 
 
+## Resultados obtenidos
+**Matriz de transformación homogénea para RR:**
+
+![MRR](ACTI/MRR.png)
+
+**Matriz de transformación homogénea para RRR:**
+
+![MRRR](ACTI/MRRR.png)
+
+**Matriz de transformación homogénea para RRP:**
+
+![MRRP](ACTI/MRRP.png)
 
 
 
-<<<<<<< HEAD
-
-- `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
-- `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
-- `forward_kinematics_dh_class.py`: Unified class with both numeric and symbolic methods
-- `example.py`: Example usage of numeric and symbolic functions (separate functions)
-- `example2.py`: Example usage of the unified class for both numeric and symbolic calculations
-
-## How to Use
-1. **Clone the repository**
-   ```sh
-   git clone <your-repo-url>
-   cd dh_forward_kinematics_python
-   ```
-2. **Install dependencies**
-   This project requires `numpy` and `sympy`. Install them with:
-   ```sh
-   pip install numpy sympy
-   ```
-3. **Run examples**
-   - For basic function usage:
-     ```sh
-     python example.py
-     ```
-   - For class-based usage:
-     ```sh
-     python example2.py
-     ```
-
-## How It Works
-- **Numeric calculation:**
-  - Provide a list of DH parameters (theta, d, a, alpha) for each joint as numbers.
-  - The code computes the transformation matrix using NumPy.
-- **Symbolic calculation:**
-  - Provide DH parameters as SymPy symbols or expressions.
-  - The code computes the transformation matrix symbolically, allowing for analytical manipulation.
-- **Unified class:**
-  - The `ForwardKinematicsDH` class provides both `numeric()` and `symbolic()` static methods for easy switching between calculation types.
-
-## Example
-```
-from forward_kinematics_dh_class import ForwardKinematicsDH
-import numpy as np
-import sympy as sp
-
-# Numeric
-dh_params = [[np.pi/4, 0, 1, 0], [np.pi/4, 0, 1, 0]]
-H = ForwardKinematicsDH.numeric(dh_params)
-print(H)
-
-# Symbolic
-th1, th2 = sp.symbols('th1 th2')
-a1, a2 = sp.symbols('a1 a2')
-dh_params_sym = [[th1, 0, a1, 0], [th2, 0, a2, 0]]
-H_sym = ForwardKinematicsDH.symbolic(dh_params_sym)
-sp.pprint(H_sym)
-```
-
-## License
-MIT
-=======
 ## Conclusión
 El proyecto permitió implementar con éxito la **cinemática directa simbólica** de tres configuraciones de robots manipuladores (RR, RRR y SCARA) mediante Python. La utilización de los parámetros Denavit-Hartenberg y las librerías **Sympy** y **Numpy** facilitó el cálculo y verificación de las matrices de transformación homogénea.
->>>>>>> 3d26b09b3abe32dbe8c8690a78396a88603ba411
