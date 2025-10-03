@@ -63,6 +63,18 @@ Cada archivo de robot sigue la misma estructura
 •	Se obtiene la matriz numérica con -`ForwardKinematicsDH.numeric(dh_params)`
 
 ### 4.Robots analizados
+**a)Robbot Planar RR(2GDL)**
+
+![RR](ACTI/RR.png)
+
+Archivo: `RR.py`
+	Definición de símbolos: q_1,q_2,l_1,l_2.
+	Tabla DH:   IMAGEN C
+	•  Cálculo simbólico: se genera la matriz homogénea H_0^2con ForwardKinematicsDH.symbolic().
+	•  Ejemplo numérico: q_1=45^∘,q_2=-45^∘,l_1=l_2=1.
+	•  Resultado esperado: la posición final corresponde al efector en un plano con dos rotaciones consecutivas.
+
+
 
 
 
