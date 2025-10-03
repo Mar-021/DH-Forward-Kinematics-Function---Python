@@ -60,7 +60,7 @@ Cada archivo de robot sigue la misma estructura
 
 •	Se sustituyen valores de ángulos y longitudes (ejemplo: q1=45°, q2=-45°, l1=l2=1 en el RR).
 
-•	Se obtiene la matriz numérica con ForwardKinematicsDH.numeric(dh_params).
+•	Se obtiene la matriz numérica con -`ForwardKinematicsDH.numeric(dh_params)`
 
 ### 4.Robots analizados
 
