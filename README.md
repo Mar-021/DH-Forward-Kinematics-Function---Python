@@ -38,7 +38,7 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 ### Implementación de la cinemática directa
-![Esquema del Robot Planar](ACTIV/A.png)
+![Esquema del Robot Planar](ACTI/A.png)
 
 
 
