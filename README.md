@@ -24,6 +24,28 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 ### Definición de parámetros Denavit-Hartenberg (DH)
+• Para cada robot se elaboró la tabla DH en el formato estándar [θ_i,d_i,a_i,α_i].
+
+•Los parámetros fueron obtenidos del libro Control de robots manipuladores de Fernando Reyes Cortés (págs. 226–237).
+
+•Estos parámetros fueron implementados en archivos independientes:
+
+	RR.py → robot planar de dos grados de libertad (RR).
+   
+	RRR.py → robot antropomórfico de tres grados de libertad (RRR).
+   
+	RRP.py → robot SCARA con configuración RRP.
+
+
+
+
+
+
+
+
+
+
+
 - `forward_kinematics_dh.py`: Numeric DH forward kinematics functions (NumPy)
 - `forward_kinematics_dh_symbolic.py`: Symbolic DH forward kinematics functions (SymPy)
 - `forward_kinematics_dh_class.py`: Unified class with both numeric and symbolic methods
