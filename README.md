@@ -38,6 +38,8 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 
 ### Implementación de la cinemática directa
+Cada archivo de robot sigue la misma estructura:
+
 ![DH](ACTI/A.png)
 
 
