@@ -39,6 +39,17 @@ La metodología para este proyecto se dividió en dos niveles: la implementació
 
 ### Implementación de la cinemática directa
 Cada archivo de robot sigue la misma estructura:
+-Definición de variables simbólicas:
+o	Ejemplo (RR): q1, q2, l1, l2 = sp.symbols('q1 q2 l1 l2').
+        -Definición de la tabla DH:
+o	Ejemplo (RR): IMAGEN A
+-Cálculo simbólico de la matriz de transformación homogénea mediante:
+•	ForwardKinematicsDH.symbolic(dh_params).
+•	El resultado se imprime en consola con sp.pprint().
+-Ejemplo numérico para validar los cálculos:
+•	Se sustituyen valores de ángulos y longitudes (ejemplo: q1=45°, q2=-45°, l1=l2=1 en el RR).
+•	Se obtiene la matriz numérica con ForwardKinematicsDH.numeric(dh_params).
+
 
 ![DH](ACTI/A.png)
 
