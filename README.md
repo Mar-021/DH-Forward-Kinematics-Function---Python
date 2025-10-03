@@ -68,8 +68,18 @@ Cada archivo de robot sigue la misma estructura
 
 
 
+## Resultados obtenidos
+**Matriz de transformación homogénea para RR:**
 
+![MRR](ACTI/MRR.png)
 
+**Matriz de transformación homogénea para RRR:**
+
+![MRRR](ACTI/MRRR.png)
+
+**Matriz de transformación homogénea para RRP:**
+
+![MRRP](ACTI/MRRP.png)
 
 
 
